@@ -41,7 +41,7 @@ def merge_excel_files(file_list):
 
     return merged_df
 
-# Custom CSS for background color
+# Custom CSS for background color and hiding branding (including the cat icon)
 page_bg_color = """
 <style>
     body {
@@ -50,10 +50,29 @@ page_bg_color = """
     .stApp {
         background-color: #B0E0E6;
     }
+
+    /* Hide Streamlit's cat icon */
+    .cat-icon {
+        display: none !important;
+    }
+
+    /* Hide Streamlit branding section */
+    .css-1dbjc4n {
+        display: none !important;
+    }
+
+    /* Optional: Make the background look cleaner */
+    .stHeader {
+        background-color: #FFD700 !important;
+    }
+
+    .stSidebar {
+        background-color: #F0F8FF !important;
+    }
 </style>
 """
 
-# Apply the background color
+# Apply the background color and hide branding
 st.markdown(page_bg_color, unsafe_allow_html=True)
 
 # Check if user is authenticated
